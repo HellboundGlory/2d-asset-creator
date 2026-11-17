@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "character": {
+    "id": "hero",
+    "name": "Hero",
+    "art_direction": "Ask the user; record their answer here",
+    "view": "side",
+    "default_facing": "right",
+    "canvas": {
+      "width": 1024,
+      "height": 1024,
+      "color_mode": "RGBA",
+      "colour_space": "sRGB",
+      "background": "transparent",
+      "origin": "bottom_center"
+    },
+    "fps": 24,
+    "target_engines": ["godot", "unity", "pixijs"]
+  },
+  "parts": {
+    "directory": "source/parts",
+    "expected": [
+      "head",
+      "torso",
+      "upperarm_l",
+      "forearm_l",
+      "hand_l",
+      "upperarm_r",
+      "forearm_r",
+      "hand_r",
+      "thigh_l",
+      "shin_l",
+      "foot_l",
+      "thigh_r",
+      "shin_r",
+      "foot_r"
+    ],
+    "optional": ["neck", "pelvis", "hair_front", "hair_back", "eye_l_open", "eye_r_open", "mouth_neutral"]
+  },
+  "animations": [
+    {"name": "idle", "loop": true, "required": true},
+    {"name": "walk", "loop": true, "required": true},
+    {"name": "run", "loop": true, "required": false},
+    {"name": "jump", "loop": false, "required": true},
+    {"name": "fall", "loop": true, "required": false},
+    {"name": "land", "loop": false, "required": false},
+    {"name": "attack", "loop": false, "required": false},
+    {"name": "hurt", "loop": false, "required": false},
+    {"name": "death", "loop": false, "required": false}
+  ],
+  "deliverables": {
+    "krita_master": "source/hero.kra",
+    "layered_handoff": "source/hero.psd",
+    "rigby_master": "rig/hero.rigby",
+    "skeleton_json": "exports/skeletal/hero.json",
+    "atlas": "exports/skeletal/hero.atlas",
+    "atlas_texture": "exports/skeletal/hero.png"
+  }
+}
