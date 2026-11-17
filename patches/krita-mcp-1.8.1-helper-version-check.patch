@@ -1,0 +1,13 @@
+diff --git a/pykrita/krita_mcp/native_commands.py b/pykrita/krita_mcp/native_commands.py
+index 19afa60..43b0714 100644
+--- a/pykrita/krita_mcp/native_commands.py
++++ b/pykrita/krita_mcp/native_commands.py
+@@ -27,7 +27,7 @@ def pointer(obj):
+ 
+ 
+ def library():
+-    if (sys.platform != "linux" or sys.byteorder != "little" or b._krita().version() != "6.0.4"
++    if (sys.platform != "linux" or sys.byteorder != "little" or b._krita().version().partition(" ")[0] != "6.0.4"
+             or not QtCore.QT_VERSION_STR.startswith("6.")):
+         raise b.OpError("Native helper requires Linux/Krita 6.0.4/Qt6/little-endian.", kind="unsupported")
+     folder = Path(__file__).resolve().parent
